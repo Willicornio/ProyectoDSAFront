@@ -22,8 +22,7 @@ public class MainActivity extends AppCompatActivity {
     EditText nombre;
     EditText pass;
     TextView info;
-
-
+    Button crearusuario;
 
 
     @Override
@@ -36,13 +35,7 @@ public class MainActivity extends AppCompatActivity {
         pass = findViewById(R.id.pass);
         info = findViewById(R.id.textView);
         api = APIJuego.retrofit.create(APIJuego.class);
-
-
-
-
-
-
-
+        crearusuario = findViewById(R.id.crearusuario);
 
 
         loguin.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 final String name = nombre.getText().toString();
 
 
-                Call<Boolean> usercall = api.loguin(name, contraseña);
+                Call<Boolean> usercall = api.login();
 
                 usercall.enqueue(new Callback<Boolean>() {
                     @Override
@@ -63,14 +56,13 @@ public class MainActivity extends AppCompatActivity {
 
                         if (a == true) {
 
-                            String idUser = "id"+name; //AQUI PODEMOS HACER UN GET Y PASARLE LE OBJETO ENTERO MEJOR, SI PERO NO SE COMO SE PASA ASÍ QUE DE MOMENTO ASI SE QUEDA
-                            Intent mIntent = new Intent(MainActivity.this,MenuActivity.class);
+                            String idUser = "id" + name; //AQUI PODEMOS HACER UN GET Y PASARLE LE OBJETO ENTERO MEJOR, SI PERO NO SE COMO SE PASA ASÍ QUE DE MOMENTO ASI SE QUEDA
+                            Intent mIntent = new Intent(MainActivity.this, MenuActivity.class);
                             mIntent.putExtra("idUser", idUser);
                             startActivity(mIntent);
 
 
-                        }
-                        else {
+                        } else {
 
                             Toast.makeText(getApplicationContext(), "Fallo al poner las cosas", Toast.LENGTH_SHORT);
                         }
@@ -84,18 +76,28 @@ public class MainActivity extends AppCompatActivity {
 
 
                     }
+
+
                 });
 
 
             }
         });
 
+        crearusuario.setOnClickListener(new View.OnClickListener() {
 
+            public void onClick(View v) {
+                String nom = nombre.getText().toString();
+                final String pas = pass.getText().toString();
+                Intent mIntent = new Intent(MainActivity.this, CrearUsuario.class);
+                startActivity(mIntent);
+
+
+            }
+
+
+        });
 
 
     }
-
-
-
-
 }

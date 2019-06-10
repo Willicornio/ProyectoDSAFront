@@ -19,11 +19,15 @@ import retrofit2.http.Field;
 public interface  APIJuego {
 
 
-    @POST("juego/loguin/{id}/{pass}")
-    Call<Boolean> loguin(
-            @Path("id") String id,
-            @Path("pass") String pass);
+    @POST("usuarios/login")
+    Call<Boolean> login();
 
+
+
+    @POST("usuarios/crear/{nombre}/{pass}")
+    Call<Boolean> crearusuario(
+            @Path("nombre") String nom,
+            @Path("pass") String pass);
 
 
     @GET("juego/usuarios")
@@ -38,7 +42,7 @@ public interface  APIJuego {
 
 
     public static Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://juego")
+            .baseUrl("http:/localhost:8080/dsaApp/")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
