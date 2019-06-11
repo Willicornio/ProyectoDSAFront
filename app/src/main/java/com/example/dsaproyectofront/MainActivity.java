@@ -41,20 +41,21 @@ public class MainActivity extends AppCompatActivity {
         loguin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "hola", Toast.LENGTH_SHORT);
+                String name = nombre.getText().toString();
                 String contraseña = pass.getText().toString();
-                final String name = nombre.getText().toString();
+                Auth a = new Auth(name, contraseña);
+                Call<UsuarioTO> usercall = api.login(a);
 
-
-                Call<Boolean> usercall = api.login();
-
-                usercall.enqueue(new Callback<Boolean>() {
+                usercall.enqueue(new Callback<UsuarioTO>() {
                     @Override
-                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                    public void onResponse(Call<UsuarioTO> call, Response<UsuarioTO> response) {
 
 
-                        Boolean a = response.body();
+                        UsuarioTO usuario = response.body();
 
-                        if (a == true) {
+
+                        if (name.equals(usuario.getNombre())) {
 
                             String idUser = "id" + name; //AQUI PODEMOS HACER UN GET Y PASARLE LE OBJETO ENTERO MEJOR, SI PERO NO SE COMO SE PASA ASÍ QUE DE MOMENTO ASI SE QUEDA
                             Intent mIntent = new Intent(MainActivity.this, MenuActivity.class);
@@ -70,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                     @Override
-                    public void onFailure(Call<Boolean> call, Throwable t) {
+                    public void onFailure(Call<UsuarioTO> call, Throwable t) {
 
                         Toast.makeText(getApplicationContext(), "Fallo con la petición de información", Toast.LENGTH_SHORT);
 
@@ -87,8 +88,6 @@ public class MainActivity extends AppCompatActivity {
         crearusuario.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                String nom = nombre.getText().toString();
-                final String pas = pass.getText().toString();
                 Intent mIntent = new Intent(MainActivity.this, CrearUsuario.class);
                 startActivity(mIntent);
 

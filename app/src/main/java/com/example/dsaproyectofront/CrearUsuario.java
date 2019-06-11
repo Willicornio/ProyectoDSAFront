@@ -22,6 +22,7 @@ public class CrearUsuario extends AppCompatActivity {
     Button registrarse;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,33 +36,25 @@ public class CrearUsuario extends AppCompatActivity {
         registrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "aaaaaaaaaaaaaaaaaa", Toast.LENGTH_SHORT);
                 String pas = pass.getText().toString();
-                final String nom = nombre.getText().toString();
+                String nom = nombre.getText().toString();
 
 
-                Call<Boolean> usercall = api.crearusuario(nom, pas);
+                Call<Usuario> usercall = api.crearusuario(nom, pas);
 
-                usercall.enqueue(new Callback<Boolean>() {
+                usercall.enqueue(new Callback<Usuario>() {
                     @Override
-                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                    public void onResponse(Call<Usuario> call, Response<Usuario> response) {
 
 
-                        Boolean a = response.body();
-
-                        if (a == true) {
-
-                            String idUser = "id" + nom;
-
-
-                        } else {
-
-                            Toast.makeText(getApplicationContext(), "Fallo al poner las cosas", Toast.LENGTH_SHORT);
-                        }
+                        Intent mIntent = new Intent(CrearUsuario.this, MenuActivity.class);
+                        startActivity(mIntent);
                     }
 
 
                     @Override
-                    public void onFailure(Call<Boolean> call, Throwable t) {
+                    public void onFailure(Call<Usuario> call, Throwable t) {
 
                         Toast.makeText(getApplicationContext(), "Fallo con la petición de información", Toast.LENGTH_SHORT);
 

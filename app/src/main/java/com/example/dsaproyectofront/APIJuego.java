@@ -20,19 +20,21 @@ public interface  APIJuego {
 
 
     @POST("usuarios/login")
-    Call<Boolean> login();
+    Call<UsuarioTO> login(
+            @Body Auth a
+    );
 
 
 
     @POST("usuarios/crear/{nombre}/{pass}")
-    Call<Boolean> crearusuario(
+    Call<Usuario> crearusuario(
             @Path("nombre") String nom,
             @Path("pass") String pass);
 
 
-    @GET("juego/usuarios")
-     Call<LinkedList<Usuario>> misusuarios();
 
+   @GET("usuarios/todos")
+   Call<LinkedList<Usuario>> misusuarios();
 
     @GET("juego/objeto/{id}")
     Call<Objeto> dameObjeto(
