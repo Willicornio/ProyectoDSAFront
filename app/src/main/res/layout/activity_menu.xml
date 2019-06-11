@@ -2,9 +2,11 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/holo_green_light"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MenuActivity">
+
 
     <Button
         android:id="@+id/jugar"
@@ -14,7 +16,8 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="162dp"
         android:layout_marginBottom="87dp"
-        android:text="Button"
+        android:background="@color/colorPrimary"
+        android:text="Jugar"
         app:layout_constraintBottom_toTopOf="@+id/historial"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -29,10 +32,11 @@
         android:layout_marginTop="54dp"
         android:layout_marginEnd="162dp"
         android:layout_marginBottom="84dp"
-        android:text="Button"
+        android:background="@color/colorPrimary"
+        android:text="Historial"
         app:layout_constraintBottom_toTopOf="@+id/web"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/jugar" />
 
@@ -41,14 +45,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="161dp"
-        android:layout_marginTop="108dp"
         android:layout_marginEnd="162dp"
         android:layout_marginBottom="100dp"
-        android:text="Button"
+        android:background="@color/colorPrimary"
+        android:text="atras"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/web" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/web"
@@ -58,10 +61,11 @@
         android:layout_marginTop="84dp"
         android:layout_marginEnd="162dp"
         android:layout_marginBottom="108dp"
-        android:text="Button"
+        android:background="@color/colorPrimary"
+        android:text="Visitar nuestra web"
         app:layout_constraintBottom_toTopOf="@+id/atrás"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/historial" />
 </android.support.constraint.ConstraintLayout>

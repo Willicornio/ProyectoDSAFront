@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/holo_green_light"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -44,6 +45,7 @@
         android:layout_marginTop="154dp"
         android:layout_marginEnd="70dp"
         android:layout_marginBottom="171dp"
+        android:background="@color/colorPrimary"
         android:text="Loguin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,12 +60,13 @@
         android:layout_marginTop="154dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="171dp"
+        android:background="@color/colorPrimary"
         android:text="Salir"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pass"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView"
@@ -85,14 +88,13 @@
         android:id="@+id/crearusuario"
         android:layout_width="89dp"
         android:layout_height="52dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="27dp"
-        android:layout_marginEnd="68dp"
+        android:layout_marginEnd="84dp"
         android:layout_marginBottom="92dp"
+        android:background="@color/colorPrimary"
         android:text="Crear Usuario"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintVertical_bias="1.0" />
 </android.support.constraint.ConstraintLayout>

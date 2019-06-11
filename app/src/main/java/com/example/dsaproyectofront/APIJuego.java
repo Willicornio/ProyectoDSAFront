@@ -43,6 +43,8 @@ public interface  APIJuego {
 
 
 
+
+
     public static Retrofit retrofit = new Retrofit.Builder()
             .baseUrl("http:/localhost:8080/dsaApp/")
             .addConverterFactory(GsonConverterFactory.create())

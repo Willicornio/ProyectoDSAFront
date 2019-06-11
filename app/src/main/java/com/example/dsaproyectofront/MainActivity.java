@@ -85,6 +85,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        salir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                System.exit(0);
+
+            }
+        });
+
         crearusuario.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
