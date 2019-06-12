@@ -41,6 +41,13 @@ public interface  APIJuego {
             @Path("id") String id);
 
 
+    @GET ("mapa/idMapa")
+    Call<Mapa> dameMapa(
+
+            @Path("id") String id);
+
+
+
 
 
 
