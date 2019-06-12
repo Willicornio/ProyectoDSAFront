@@ -47,7 +47,30 @@ public class MenuActivity extends AppCompatActivity {
         jugar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              //se inicia el juego
+                String id ="1";
+                Call<Mapa> mapacall = api.dameMapa(id);
+                mapacall.enqueue(new Callback<Mapa>() {
+                    @Override
+                    public void onResponse(Call<Mapa> call, Response<Mapa> response) {
+
+                        Mapa m = response.body();
+                        Toast.makeText(getApplicationContext(), m.getMapatodo(), Toast.LENGTH_SHORT).show();
+                        Intent mIntent = new Intent(MenuActivity.this, Juego.class);
+                        startActivity(mIntent);
+
+            }
+
+                    @Override
+                    public void onFailure(Call<Mapa> call, Throwable t) {
+
+                    }
+                });
+
+
+
+
+
+
             }
         });
 
