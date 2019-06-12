@@ -37,7 +37,7 @@ public class RankingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking);
-        recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recycler = new Recycler(this);
         recyclerView.setAdapter(recycler);
         recyclerView.setHasFixedSize(true);
@@ -48,15 +48,12 @@ public class RankingActivity extends AppCompatActivity {
         //atras = findViewById(R.id.button3);
 
 
-
-
         api = APIJuego.retrofit.create(APIJuego.class);
 
         getData();
 
 
-
-     //   atras.setOnClickListener(new View.OnClickListener() {
+        //   atras.setOnClickListener(new View.OnClickListener() {
         //   @Override
         //    public void onClick(View v) {
 
@@ -64,17 +61,15 @@ public class RankingActivity extends AppCompatActivity {
         //       startActivity(mIntent);
 
         //    }
-        // });
-
     }
     private void getData(){
 
-        Call<LinkedList<Usuario>> misusuarios = api.misusuarios();
-        misusuarios.enqueue(new Callback<LinkedList<Usuario>>() {
+        Call<List<UsuarioTO>> misusuarios = api.misusuarios();
+        misusuarios.enqueue(new Callback<List<UsuarioTO>>() {
             @Override
-            public void onResponse(Call<LinkedList<Usuario>> call, Response<LinkedList<Usuario>> response) {
+            public void onResponse(Call<List<UsuarioTO>> call, Response<List<UsuarioTO>> response) {
                 if(response.isSuccessful()){
-                    LinkedList<Usuario> usuarios = response.body();
+                    List<UsuarioTO> usuarios = response.body();
                     recycler.rellenarLista(usuarios);
                     progressDialog.hide();
 
@@ -97,7 +92,7 @@ public class RankingActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<LinkedList<Usuario>> call, Throwable t) {
+            public void onFailure(Call<List<UsuarioTO>> call, Throwable t) {
 
                 progressDialog.hide();
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(RankingActivity.this);

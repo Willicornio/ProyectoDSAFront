@@ -37,8 +37,8 @@ public interface  APIJuego {
 
 
 
-   @GET("usuarios/todos")
-   Call<LinkedList<Usuario>> misusuarios();
+   @GET("usuarios")
+   Call<List<UsuarioTO>> misusuarios();
 
     @GET("juego/objeto/{id}")
     Call<Objeto> dameObjeto(

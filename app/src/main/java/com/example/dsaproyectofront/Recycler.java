@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -34,9 +35,9 @@ public class Recycler extends RecyclerView.Adapter<Recycler.ViewHolder> {
         this.context = context;
     }
 
-    private List<Usuario> lista;
+    private List<UsuarioTO> lista;
 
-    public void rellenarLista(List<Usuario> todosusuarios){
+    public void rellenarLista(List<UsuarioTO> todosusuarios){
         lista.addAll(todosusuarios);
         notifyDataSetChanged();
 
@@ -53,7 +54,7 @@ public class Recycler extends RecyclerView.Adapter<Recycler.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
-        Usuario usuario = lista.get(i);
+        UsuarioTO usuario = lista.get(i);
 
         viewHolder.puntuacion.setText(usuario.getId());
         viewHolder.nombre.setText(usuario.getPuntuacion());
