@@ -44,16 +44,17 @@ public class MenuActivity extends AppCompatActivity {
      //   adapter = getIntent();
        // String idlogin = (adapter.getStringExtra("idUser"));
 
-        jugar.setOnClickListener(new View.OnClickListener() {
+        atras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String id ="1";
-                Call<Mapa> mapacall = api.dameMapa(id);
-                mapacall.enqueue(new Callback<Mapa>() {
+                Call<Mapa> call = api.dameMapa(id);
+                call.enqueue(new Callback<Mapa>() {
                     @Override
                     public void onResponse(Call<Mapa> call, Response<Mapa> response) {
 
-                        Mapa m = response.body();
+                        Mapa m = new Mapa();
+                         m = response.body();
                         Toast.makeText(getApplicationContext(), m.getMapatodo(), Toast.LENGTH_SHORT).show();
                         Intent mIntent = new Intent(MenuActivity.this, Juego.class);
                         startActivity(mIntent);
@@ -62,6 +63,10 @@ public class MenuActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<Mapa> call, Throwable t) {
+
+
+                        Toast.makeText(getApplicationContext(), "Fallo con la petición de información", Toast.LENGTH_SHORT).show();
+
 
                     }
                 });
@@ -102,7 +107,7 @@ public class MenuActivity extends AppCompatActivity {
 
 
 
-        atras.setOnClickListener(new View.OnClickListener() {
+        jugar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
