@@ -24,8 +24,7 @@ public class MenuActivity extends AppCompatActivity {
     Button web;
     Button atras;
 
-//aaaaaaaaaaaa
-
+//Hola soy un comentario.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
