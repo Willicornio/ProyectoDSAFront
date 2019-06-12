@@ -17,6 +17,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     private APIJuego api;
+    UsuarioTO usuarioTO;
     Button loguin;
     Button salir;
     EditText nombre;
@@ -38,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         crearusuario = findViewById(R.id.crearusuario);
 
 
+
+
         loguin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,31 +52,30 @@ public class MainActivity extends AppCompatActivity {
 
                 usercall.enqueue(new Callback<UsuarioTO>() {
                     @Override
-                    public void onResponse(Call<UsuarioTO> call, Response<UsuarioTO> response) {
+                    public void onResponse(Call<UsuarioTO> usercall, Response<UsuarioTO> response) {
 
 
                         UsuarioTO usuario = response.body();
-
+                        String id = usuario.getId();
 
                         if (name.equals(usuario.getNombre())) {
-
-                            String idUser = "id" + name; //AQUI PODEMOS HACER UN GET Y PASARLE LE OBJETO ENTERO MEJOR, SI PERO NO SE COMO SE PASA ASÍ QUE DE MOMENTO ASI SE QUEDA
                             Intent mIntent = new Intent(MainActivity.this, MenuActivity.class);
-                            mIntent.putExtra("idUser", idUser);
+                            mIntent.putExtra("idUser", id);
                             startActivity(mIntent);
-
-
-                        } else {
-
-                            Toast.makeText(getApplicationContext(), "Fallo al poner las cosas", Toast.LENGTH_SHORT);
                         }
-                    }
+                                else{
+                                    Toast.makeText(getApplicationContext(), "Fallo al poner las cosas", Toast.LENGTH_SHORT).show();
+
+                                }
+                        }
+
+
 
 
                     @Override
                     public void onFailure(Call<UsuarioTO> call, Throwable t) {
 
-                        Toast.makeText(getApplicationContext(), "Fallo con la petición de información", Toast.LENGTH_SHORT);
+                        Toast.makeText(getApplicationContext(), "Fallo con la petición de información", Toast.LENGTH_SHORT).show();
 
 
                     }

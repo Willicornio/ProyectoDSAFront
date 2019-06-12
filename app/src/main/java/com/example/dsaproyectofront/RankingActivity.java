@@ -45,7 +45,7 @@ public class RankingActivity extends AppCompatActivity {
 
         nombre = findViewById(R.id.nombre);
         puntuacion = findViewById(R.id.puntuacion);
-        atras = findViewById(R.id.atras2);
+        //atras = findViewById(R.id.button3);
 
 
 
@@ -56,15 +56,15 @@ public class RankingActivity extends AppCompatActivity {
 
 
 
-        atras.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+     //   atras.setOnClickListener(new View.OnClickListener() {
+        //   @Override
+        //    public void onClick(View v) {
 
-                Intent mIntent = new Intent(RankingActivity.this,MenuActivity.class);
-                startActivity(mIntent);
+        //       Intent mIntent = new Intent(RankingActivity.this,MenuActivity.class);
+        //       startActivity(mIntent);
 
-            }
-        });
+        //    }
+        // });
 
     }
     private void getData(){

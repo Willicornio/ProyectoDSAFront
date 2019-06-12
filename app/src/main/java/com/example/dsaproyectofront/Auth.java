@@ -28,4 +28,13 @@ public class Auth {
     public void setPass(String pass) {
         this.pass = pass;
     }
+
+
+    @Override
+    public String toString() {
+        return "Ath{" +
+                "nombre=" + nombre +
+                ", pass=" + pass +
+                '}';
+    }
 }

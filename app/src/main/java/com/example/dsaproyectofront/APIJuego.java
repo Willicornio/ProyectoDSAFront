@@ -26,10 +26,14 @@ public interface  APIJuego {
 
 
 
-    @POST("usuarios/crear/{nombre}/{pass}")
-    Call<Usuario> crearusuario(
-            @Path("nombre") String nom,
-            @Path("pass") String pass);
+
+
+
+    @POST("usuarios/crear")
+    Call<UsuarioTO> crearusuario(
+            @Body Auth a);
+
+
 
 
 
@@ -52,8 +56,8 @@ public interface  APIJuego {
 
 
 
-    public static Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http:/localhost:8080/dsaApp/")
+ public static Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl("http://10.0.2.2:8080/dsaApp/")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 

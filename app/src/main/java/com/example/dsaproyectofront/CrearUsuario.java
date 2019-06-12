@@ -1,6 +1,7 @@
 package com.example.dsaproyectofront;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -40,21 +41,32 @@ public class CrearUsuario extends AppCompatActivity {
                 String pas = pass.getText().toString();
                 String nom = nombre.getText().toString();
 
+                Auth auth = new Auth(nom, pas);
 
-                Call<Usuario> usercall = api.crearusuario(nom, pas);
 
-                usercall.enqueue(new Callback<Usuario>() {
+                Call<UsuarioTO> call = api.crearusuario(auth);
+
+                call.enqueue(new Callback<UsuarioTO>() {
                     @Override
-                    public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+                    public void onResponse(Call<UsuarioTO> call, Response<UsuarioTO> response) {
 
 
-                        Intent mIntent = new Intent(CrearUsuario.this, MenuActivity.class);
-                        startActivity(mIntent);
-                    }
+
+
+
+                            UsuarioTO usuario = new UsuarioTO();
+                             usuario = response.body();
+                                Intent mIntent = new Intent(CrearUsuario.this, MenuActivity.class);
+                                mIntent.putExtra("myUser", (Parcelable) usuario);
+                            startActivity(mIntent);
+
+
+
+                        }
 
 
                     @Override
-                    public void onFailure(Call<Usuario> call, Throwable t) {
+                    public void onFailure(Call<UsuarioTO> call, Throwable t) {
 
                         Toast.makeText(getApplicationContext(), "Fallo con la petición de información", Toast.LENGTH_SHORT);
 

@@ -23,6 +23,8 @@ public class MenuActivity extends AppCompatActivity {
     Button ranking;
     Button web;
     Button atras;
+    UsuarioTO usuarioTO;
+    Intent adapter;
 
 //Hola soy un comentario.
 
@@ -35,15 +37,12 @@ public class MenuActivity extends AppCompatActivity {
         ranking = findViewById(R.id.historial);
         web = findViewById(R.id.web);
         atras = findViewById(R.id.atrás);
+
         api = APIJuego.retrofit.create(APIJuego.class);
 
 
-
-
-
-
-
-
+     //   adapter = getIntent();
+       // String idlogin = (adapter.getStringExtra("idUser"));
 
         jugar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +56,7 @@ public class MenuActivity extends AppCompatActivity {
         ranking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mIntent = new Intent(MenuActivity.this,MainActivity.class);
+                Intent mIntent = new Intent(MenuActivity.this,RankingActivity.class);
                 startActivity(mIntent);
 
             }
