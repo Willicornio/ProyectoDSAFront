@@ -24,7 +24,7 @@ public class MenuActivity extends AppCompatActivity {
     Button web;
     Button atras;
     UsuarioTO usuarioTO;
-    Intent adapter;
+    TextView textusuario;
     private String idUser;
 
 //Hola soy un comentario.
@@ -38,12 +38,18 @@ public class MenuActivity extends AppCompatActivity {
         ranking = findViewById(R.id.historial);
         web = findViewById(R.id.web);
         atras = findViewById(R.id.atrás);
+        textusuario = findViewById(R.id.textusuario);
+
 
         api = APIJuego.retrofit.create(APIJuego.class);
 
 
         Intent intent = getIntent();
-        idUser = intent.getStringExtra("idUser");
+        idUser = intent.getStringExtra("id");
+        textusuario.setText(idUser);
+
+        Toast.makeText(getApplicationContext(), idUser + "hola holita", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), idUser + "hola k tal", Toast.LENGTH_SHORT).show();
 
      //   adapter = getIntent();
        // String idlogin = (adapter.getStringExtra("idUser"));

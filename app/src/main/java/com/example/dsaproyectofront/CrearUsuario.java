@@ -55,12 +55,12 @@ public class CrearUsuario extends AppCompatActivity {
 
 
 
-
+                            String id = "id"+nom;
 
                             UsuarioTO usuario = new UsuarioTO();
                              usuario = response.body();
                                 Intent mIntent = new Intent(CrearUsuario.this, MenuActivity.class);
-                                mIntent.putExtra("myUser", (Parcelable) usuario);
+                                mIntent.putExtra("id", id );
                             startActivity(mIntent);
 
 

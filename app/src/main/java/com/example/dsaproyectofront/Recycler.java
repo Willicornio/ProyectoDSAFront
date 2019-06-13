@@ -56,7 +56,7 @@ public class Recycler extends RecyclerView.Adapter<Recycler.ViewHolder> {
 
         UsuarioTO usuario = lista.get(i);
 
-        viewHolder.puntuacion.setText(usuario.getId());
+        viewHolder.puntuacion.setText(usuario.getIdUser());
         viewHolder.nombre.setText(usuario.getPuntuacion());
 
     }

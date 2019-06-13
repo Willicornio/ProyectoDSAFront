@@ -60,12 +60,18 @@ public class MainActivity extends AppCompatActivity {
                             case 201:
 
                             UsuarioTO usuario = response.body();
-                            String id = usuario.getId();
+
+                                  String nombre = response.body().getNombre();
+
+                                String id = response.body().getIdUser();
+
+                                Toast.makeText(getApplicationContext(), id, Toast.LENGTH_SHORT).show();
+
 
 
                             if (name.equals(usuario.getNombre())) {
                                 Intent mIntent = new Intent(MainActivity.this, MenuActivity.class);
-                                mIntent.putExtra("idUser", id);
+                                mIntent.putExtra("id", usuario.getIdUser());
                                 startActivity(mIntent);
                             } else {
                                 Toast.makeText(getApplicationContext(), "Fallo al poner las cosas", Toast.LENGTH_SHORT).show();

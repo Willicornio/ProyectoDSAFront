@@ -2,7 +2,7 @@ package com.example.dsaproyectofront;
 
 public class UsuarioTO {
 
-    String id;
+    String idUser;
     String nombre;
     int dinero;
     int puntuacion;
@@ -12,18 +12,18 @@ public class UsuarioTO {
 
 
     public UsuarioTO(String id, String nombre, int dinero, int puntuacion) {
-        this.id = id;
+        this.idUser = id;
         this.nombre = nombre;
         this.dinero = dinero;
         this.puntuacion = puntuacion;
     }
 
-    public String getId() {
-        return id;
+    public String getIdUser() {
+        return idUser;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setIdUser(String id) {
+        this.idUser = id;
     }
 
     public String getNombre() {
