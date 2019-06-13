@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
     EditText pass;
     TextView info;
     Button crearusuario;
-
+    TextView textViewnom;
+    TextView textViewInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +34,11 @@ public class MainActivity extends AppCompatActivity {
         salir = findViewById(R.id.button2);
         nombre = findViewById(R.id.nombre);
         pass = findViewById(R.id.pass);
-        info = findViewById(R.id.textView);
+        info = findViewById(R.id.textViewInfo);
         api = APIJuego.retrofit.create(APIJuego.class);
         crearusuario = findViewById(R.id.crearusuario);
-
+        textViewnom = findViewById(R.id.textViewnom);
+        textViewInfo = findViewById(R.id.textViewInfo);
 
 
 

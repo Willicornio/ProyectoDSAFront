@@ -9,8 +9,8 @@
 
     <Button
         android:id="@+id/registrarse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="123dp"
+        android:layout_height="55dp"
         android:layout_marginStart="119dp"
         android:layout_marginEnd="178dp"
         android:layout_marginBottom="120dp"
@@ -33,7 +33,6 @@
         android:layout_marginEnd="116dp"
         android:layout_marginBottom="20dp"
         android:width="250px"
-        android:text="Pass"
         app:layout_constraintBottom_toTopOf="@+id/registrarse"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -51,16 +50,49 @@
         android:layout_marginEnd="122dp"
         android:layout_marginBottom="10dp"
         android:width="250px"
-        android:text="Nombre"
         app:layout_constraintBottom_toTopOf="@+id/pass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/pass"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textViewN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="21sp"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="216dp" />
 
+    <TextView
+        android:id="@+id/textViewC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="121dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="182dp"
+        android:text="Contraseña"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="21sp"
+        app:layout_constraintBottom_toTopOf="@+id/pass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombre" />
 
-
-
+    <TextView
+        android:id="@+id/textViewN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="131dp"
+        android:layout_marginTop="226dp"
+        android:layout_marginEnd="204dp"
+        android:text="Nombre"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="21sp"
+        app:layout_constraintBottom_toTopOf="@+id/nombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>

@@ -21,7 +21,8 @@ public class CrearUsuario extends AppCompatActivity {
     EditText nombre;
     EditText pass;
     Button registrarse;
-
+    TextView textViewN;
+    TextView textViewC;
 
 
     @Override
@@ -32,6 +33,8 @@ public class CrearUsuario extends AppCompatActivity {
         nombre = findViewById(R.id.nombre);
         pass = findViewById(R.id.pass);
         api = APIJuego.retrofit.create(APIJuego.class);
+        textViewN = findViewById(R.id.textViewN);
+        textViewC = findViewById(R.id.textViewC);
 
 
         registrarse.setOnClickListener(new View.OnClickListener() {
