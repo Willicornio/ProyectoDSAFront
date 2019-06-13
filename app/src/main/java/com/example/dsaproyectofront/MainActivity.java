@@ -55,20 +55,31 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<UsuarioTO> usercall, Response<UsuarioTO> response) {
 
+                        switch (response.code()) {
 
-                        UsuarioTO usuario = response.body();
-                        String id = usuario.getId();
+                            case 201:
 
-                        if (name.equals(usuario.getNombre())) {
-                            Intent mIntent = new Intent(MainActivity.this, MenuActivity.class);
-                            mIntent.putExtra("idUser", id);
-                            startActivity(mIntent);
+                            UsuarioTO usuario = response.body();
+                            String id = usuario.getId();
+
+
+                            if (name.equals(usuario.getNombre())) {
+                                Intent mIntent = new Intent(MainActivity.this, MenuActivity.class);
+                                mIntent.putExtra("idUser", id);
+                                startActivity(mIntent);
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Fallo al poner las cosas", Toast.LENGTH_SHORT).show();
+
+
+                            }
+                            break;
+
+                            case 404:
+
+                                Toast.makeText(getApplicationContext(), "Este usuario no existe", Toast.LENGTH_SHORT).show();
+                                break;
                         }
-                                else{
-                                    Toast.makeText(getApplicationContext(), "Fallo al poner las cosas", Toast.LENGTH_SHORT).show();
-
-                                }
-                        }
+                    }
 
 
 

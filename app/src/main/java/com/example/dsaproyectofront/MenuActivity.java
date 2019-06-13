@@ -25,6 +25,7 @@ public class MenuActivity extends AppCompatActivity {
     Button atras;
     UsuarioTO usuarioTO;
     Intent adapter;
+    private String idUser;
 
 //Hola soy un comentario.
 
@@ -40,6 +41,9 @@ public class MenuActivity extends AppCompatActivity {
 
         api = APIJuego.retrofit.create(APIJuego.class);
 
+
+        Intent intent = getIntent();
+        idUser = intent.getStringExtra("idUser");
 
      //   adapter = getIntent();
        // String idlogin = (adapter.getStringExtra("idUser"));

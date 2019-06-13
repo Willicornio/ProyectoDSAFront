@@ -27,8 +27,8 @@ public class RankingActivity extends AppCompatActivity {
     private APIJuego api;
     TextView nombre;
     TextView  puntuacion;
-    public List<Usuario> data;
-    Button atras;
+    public List<UsuarioTO> usuarios;
+    //Button atras;
 
     public Recycler recycler;
     public RecyclerView recyclerView;
@@ -38,7 +38,7 @@ public class RankingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        recycler = new Recycler(this);
+        recycler = new Recycler(RankingActivity.this);
         recyclerView.setAdapter(recycler);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -64,17 +64,17 @@ public class RankingActivity extends AppCompatActivity {
     }
     private void getData(){
 
-        Call<List<UsuarioTO>> misusuarios = api.misusuarios();
-        misusuarios.enqueue(new Callback<List<UsuarioTO>>() {
+        Call<List<UsuarioTO>> call = api.misusuarios();
+        call.enqueue(new Callback<List<UsuarioTO>>() {
             @Override
             public void onResponse(Call<List<UsuarioTO>> call, Response<List<UsuarioTO>> response) {
                 if(response.isSuccessful()){
-                    List<UsuarioTO> usuarios = response.body();
+                     usuarios = response.body();
                     recycler.rellenarLista(usuarios);
-                    progressDialog.hide();
+
 
                 }else{
-                    progressDialog.hide();
+
                     AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(RankingActivity.this);
 
                     alertDialogBuilder
@@ -94,7 +94,7 @@ public class RankingActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<UsuarioTO>> call, Throwable t) {
 
-                progressDialog.hide();
+
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(RankingActivity.this);
 
                 alertDialogBuilder
