@@ -54,7 +54,7 @@ public class MenuActivity extends AppCompatActivity {
      //   adapter = getIntent();
        // String idlogin = (adapter.getStringExtra("idUser"));
 
-        atras.setOnClickListener(new View.OnClickListener() {
+        jugar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String id ="1";
@@ -117,7 +117,7 @@ public class MenuActivity extends AppCompatActivity {
 
 
 
-        jugar.setOnClickListener(new View.OnClickListener() {
+        atras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

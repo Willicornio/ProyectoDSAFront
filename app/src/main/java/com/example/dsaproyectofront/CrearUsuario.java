@@ -40,7 +40,7 @@ public class CrearUsuario extends AppCompatActivity {
         registrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "aaaaaaaaaaaaaaaaaa", Toast.LENGTH_SHORT);
+
                 String pas = pass.getText().toString();
                 String nom = nombre.getText().toString();
 
@@ -53,15 +53,29 @@ public class CrearUsuario extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<UsuarioTO> call, Response<UsuarioTO> response) {
 
+                      switch (response.code()){
+
+                          case 201:
+
+                              String id = "id"+nom;
+
+                              UsuarioTO usuario = new UsuarioTO();
+                              usuario = response.body();
+                              Intent mIntent = new Intent(CrearUsuario.this, MenuActivity.class);
+                              mIntent.putExtra("id", id );
+                              startActivity(mIntent);
+
+                              break;
+
+                          case 404:
+
+                              Toast.makeText(getApplicationContext(),"El usuario con nombre " + nom + " ya existe", Toast.LENGTH_SHORT).show();
+
+                              break;
 
 
-                            String id = "id"+nom;
+                      }
 
-                            UsuarioTO usuario = new UsuarioTO();
-                             usuario = response.body();
-                                Intent mIntent = new Intent(CrearUsuario.this, MenuActivity.class);
-                                mIntent.putExtra("id", id );
-                            startActivity(mIntent);
 
 
 
