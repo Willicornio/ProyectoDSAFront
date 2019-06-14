@@ -43,8 +43,8 @@ public class RankingActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        nombre = findViewById(R.id.nombre);
-        puntuacion = findViewById(R.id.puntuacion);
+        nombre = findViewById(R.id.rankingnombre);
+        puntuacion = findViewById(R.id.rankingpuntuacion);
         //atras = findViewById(R.id.button3);
 
 

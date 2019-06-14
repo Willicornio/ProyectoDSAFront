@@ -5,7 +5,7 @@ public class UsuarioTO {
     String idUser;
     String nombre;
     int dinero;
-    int puntuacion;
+    int puntuacionTotal;
 
     public UsuarioTO() {
     }
@@ -15,7 +15,7 @@ public class UsuarioTO {
         this.idUser = id;
         this.nombre = nombre;
         this.dinero = dinero;
-        this.puntuacion = puntuacion;
+        this.puntuacionTotal = puntuacion;
     }
 
     public String getIdUser() {
@@ -42,11 +42,11 @@ public class UsuarioTO {
         this.dinero = dinero;
     }
 
-    public int getPuntuacion() {
-        return puntuacion;
+    public int getPuntuacionTotal() {
+        return puntuacionTotal;
     }
 
-    public void setPuntuacion(int puntuacion) {
-        this.puntuacion = puntuacion;
+    public void setPuntuacionTotal(int puntuacion) {
+        this.puntuacionTotal = puntuacion;
     }
 }

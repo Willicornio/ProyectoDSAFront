@@ -56,8 +56,12 @@ public class Recycler extends RecyclerView.Adapter<Recycler.ViewHolder> {
 
         UsuarioTO usuario = lista.get(i);
 
-        viewHolder.puntuacion.setText(usuario.getIdUser());
-        viewHolder.nombre.setText(usuario.getPuntuacion());
+        viewHolder.nombre.setText(usuario.getIdUser());
+        viewHolder.puntuacion.setText(String.valueOf(usuario.getPuntuacionTotal()));
+
+
+
+
 
     }
 
@@ -76,8 +80,8 @@ public class Recycler extends RecyclerView.Adapter<Recycler.ViewHolder> {
         public ViewHolder(View v){
             super(v);
             constraintLayout = v.findViewById(R.id.constraintLayout); //Esto es el id del ConstraitLayout que hay que ponerlo donde "ConstariLayout" ID"
-            nombre = v.findViewById(R.id.nombre);
-            puntuacion = v.findViewById(R.id.puntuacion);
+            nombre = v.findViewById(R.id.rankingnombre);
+            puntuacion = v.findViewById(R.id.rankingpuntuacion);
 
 
         }

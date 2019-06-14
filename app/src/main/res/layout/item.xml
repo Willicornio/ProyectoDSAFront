@@ -9,7 +9,7 @@
 
 
     <TextView
-        android:id="@+id/nombre"
+        android:id="@+id/rankingnombre"
         android:layout_width="179dp"
         android:layout_height="31dp"
         android:layout_marginStart="20dp"
@@ -21,11 +21,11 @@
         android:textAllCaps="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/puntuacion"
+        app:layout_constraintStart_toEndOf="@+id/rankingpuntuacion"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/puntuacion"
+        android:id="@+id/rankingpuntuacion"
         android:layout_width="179dp"
         android:layout_height="31dp"
         android:layout_marginStart="17dp"
