@@ -11,8 +11,8 @@
         android:id="@+id/registrarse"
         android:layout_width="123dp"
         android:layout_height="55dp"
-        android:layout_marginStart="119dp"
-        android:layout_marginEnd="178dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="150dp"
         android:layout_marginBottom="120dp"
         android:background="@color/colorPrimary"
         android:text="registrarse"
@@ -28,15 +28,15 @@
         android:layout_width="229dp"
         android:layout_height="52dp"
         android:layout_column="2"
-        android:layout_marginStart="66dp"
+        android:layout_marginStart="150dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="116dp"
+        android:layout_marginEnd="150dp"
         android:layout_marginBottom="20dp"
         android:width="250px"
-        app:layout_constraintBottom_toTopOf="@+id/registrarse"
         android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/registrarse"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nombre" />
 
@@ -47,12 +47,14 @@
         android:layout_width="223dp"
         android:layout_height="55dp"
         android:layout_column="2"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="122dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="150dp"
         android:layout_marginBottom="10dp"
         android:width="250px"
         app:layout_constraintBottom_toTopOf="@+id/pass"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.67"
         app:layout_constraintStart_toStartOf="@+id/pass"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -78,15 +80,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="131dp"
-        android:layout_marginTop="226dp"
+        android:layout_marginTop="90dp"
         android:layout_marginEnd="204dp"
         android:text="Nombre"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="21sp"
         app:layout_constraintBottom_toTopOf="@+id/nombre"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </android.support.constraint.ConstraintLayout>

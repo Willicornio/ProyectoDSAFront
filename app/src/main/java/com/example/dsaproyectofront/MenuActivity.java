@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 //import com.dsa.museo.UnityPlayerActivity;
 
+import com.dsa.museo.UnityPlayerActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
@@ -113,6 +115,9 @@ public class MenuActivity extends AppCompatActivity {
                 getInventario();
                 getEscudos();
                 getUsuario();
+
+                Intent mIntent = new Intent(MenuActivity.this, UnityPlayerActivity.class);
+                startActivity(mIntent);
 
             }
         });
