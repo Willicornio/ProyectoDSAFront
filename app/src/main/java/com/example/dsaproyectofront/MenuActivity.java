@@ -51,18 +51,9 @@ public class MenuActivity extends AppCompatActivity {
         atras = findViewById(R.id.atrás);
         textusuario = findViewById(R.id.textusuario);
 
-
         Intent intent = getIntent();
         idUser = intent.getStringExtra("id");
         textusuario.setText(idUser);
-
-
-
-        //   adapter = getIntent();
-       // String idlogin = (adapter.getStringExtra("idUser"));
-
-
-
 
         ranking.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,25 +63,15 @@ public class MenuActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-
         web.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("http://www.147.83.7.204:8080/login.html");
+                Uri uri = Uri.parse("http://147.83.7.204:8080/login.html");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
 
             }
         });
-
-
-
-
-
-
 
         atras.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,9 +91,6 @@ public class MenuActivity extends AppCompatActivity {
                 getInventario();
                 getEscudos();
                 getUsuario();
-
-
-
 
                 Intent mIntent = new Intent(MenuActivity.this, UnityPlayerActivity.class);
                 startActivity(mIntent);
@@ -178,8 +156,6 @@ public class MenuActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
 
     public void getEscudos() {
@@ -274,6 +250,13 @@ public class MenuActivity extends AppCompatActivity {
 
     public String dameIdUser(){
         return idUserUnity;
+    }
+
+    public void botonAtras(String idUserUnity){
+        mapas.clear();
+        escudos.clear();
+        inventario.clear();
+        idUser = idUserUnity;
     }
 
     public void reciboPuntuacion(int puntos, String idUserUnity){
