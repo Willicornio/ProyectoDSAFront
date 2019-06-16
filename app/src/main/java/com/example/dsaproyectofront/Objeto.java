@@ -3,20 +3,24 @@ public class Objeto {
 
     String id;
     String nombre;
-    int puntos;
+    String descripcion;
+    String foto;
     int dinero;
+    int vida;
     String activado;
 
     public Objeto() {
 
     }
 
-    public Objeto(String id,String Nombre, int puntos, int dinero){
+    public Objeto(String id, String Nombre, String descripcion, int dinero, int vida, String foto){
 
         this.dinero = dinero;
         this.id = id;
         this.nombre = Nombre;
-        this.puntos = puntos;
+        this.descripcion = descripcion;
+        this.foto=foto;
+        this.vida = vida;
         this.activado = "false";
     }
 
@@ -36,12 +40,20 @@ public class Objeto {
         this.nombre = nombre;
     }
 
-    public int getPuntos() {
-        return puntos;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setPuntos(int puntos) {
-        this.puntos = puntos;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 
     public int getDinero() {
@@ -50,6 +62,14 @@ public class Objeto {
 
     public void setDinero(int dinero) {
         this.dinero = dinero;
+    }
+
+    public int getVida() {
+        return vida;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
     }
 
     public String getActivado() {

@@ -52,48 +52,27 @@ public class CrearUsuario extends AppCompatActivity {
                 call.enqueue(new Callback<UsuarioTO>() {
                     @Override
                     public void onResponse(Call<UsuarioTO> call, Response<UsuarioTO> response) {
-
                       switch (response.code()){
-
                           case 201:
-
                               String id = "id"+nom;
-
                               UsuarioTO usuario = new UsuarioTO();
                               usuario = response.body();
                               Intent mIntent = new Intent(CrearUsuario.this, MenuActivity.class);
                               mIntent.putExtra("id", id );
                               startActivity(mIntent);
-
                               break;
 
                           case 404:
-
                               Toast.makeText(getApplicationContext(),"El usuario con nombre " + nom + " ya existe", Toast.LENGTH_SHORT).show();
-
                               break;
-
-
                       }
-
-
-
-
-                        }
-
-
+                    }
                     @Override
                     public void onFailure(Call<UsuarioTO> call, Throwable t) {
-
                         Toast.makeText(getApplicationContext(), "Fallo con la petición de información", Toast.LENGTH_SHORT);
-
-
                     }
 
-
                 });
-
-
             }
         });
 

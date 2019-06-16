@@ -24,39 +24,46 @@ public interface  APIJuego {
             @Body Auth a
     );
 
-
-
-
-
-
     @POST("usuarios/crear")
     Call<UsuarioTO> crearusuario(
             @Body Auth a);
 
-
-
+    @POST("usuarios/modificarpuntuacion/{idUser}/{puntuacion}")
+    Call<UsuarioTO> modificardinero(
+            @Path("idUser") String id, @Path("puntuacion") int puntuacion);
 
 
    @GET("usuarios")
    Call<List<UsuarioTO>> misusuarios();
+
+    @GET("usuarios/{idUser}")
+    Call<Usuario> dameUsuario(
+            @Path("idUser") String id);
 
     @GET("juego/objeto/{id}")
     Call<Objeto> dameObjeto(
             @Path("id") String id);
 
 
-    @GET ("mapa/{id}")
+    @GET ("mapas/{id}")
     Call<Mapa> dameMapa(
+            @Path("id") String id);
 
+    @GET ("mapas")
+    Call<List<Mapa>> dameMapas();
+
+    @GET ("objetos")
+    Call<List<Objeto>> dameObjetos();
+
+    @GET ("inventario/{id}")
+    Call<List<Inventario>> dameInventarioByID(
             @Path("id") String id);
 
 
 
 
 
-
-
- public static Retrofit retrofit = new Retrofit.Builder()
+    public static Retrofit retrofit = new Retrofit.Builder()
             .baseUrl("http://10.0.2.2:8080/dsaApp/")
             .addConverterFactory(GsonConverterFactory.create())
             .build();

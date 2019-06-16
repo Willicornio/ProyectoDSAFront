@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     Button crearusuario;
     TextView textViewnom;
     TextView textViewInfo;
+    TextView pruebamapa;
+    Mapa mapa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         crearusuario = findViewById(R.id.crearusuario);
         textViewnom = findViewById(R.id.textViewnom);
         textViewInfo = findViewById(R.id.textViewInfo);
+        pruebamapa = findViewById(R.id.prueba);
 
 
 
@@ -56,32 +59,21 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(Call<UsuarioTO> usercall, Response<UsuarioTO> response) {
 
                         switch (response.code()) {
-
                             case 201:
-
-                            UsuarioTO usuario = response.body();
-
-                                  String nombre = response.body().getNombre();
-
-                                String id = response.body().getIdUser();
-
-                                Toast.makeText(getApplicationContext(),"Bienvenido" + id, Toast.LENGTH_SHORT).show();
-
-
-
-                            if (name.equals(usuario.getNombre())) {
-                                Intent mIntent = new Intent(MainActivity.this, MenuActivity.class);
-                                mIntent.putExtra("id", usuario.getIdUser());
-                                startActivity(mIntent);
-                            } else {
-                                Toast.makeText(getApplicationContext(), "Fallo al poner las cosas", Toast.LENGTH_SHORT).show();
-
-
-                            }
-                            break;
+                                 UsuarioTO usuario = response.body();
+                                 String nombre = response.body().getNombre();
+                                 String id = response.body().getIdUser();
+                                 Toast.makeText(getApplicationContext(),"Bienvenido" + id, Toast.LENGTH_SHORT).show();
+                                    if (name.equals(usuario.getNombre())) {
+                                        Intent mIntent = new Intent(MainActivity.this, MenuActivity.class);
+                                        mIntent.putExtra("id", usuario.getIdUser());
+                                        startActivity(mIntent);
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), "Fallo al poner las cosas", Toast.LENGTH_SHORT).show();
+                                    }
+                                    break;
 
                             case 404:
-
                                 Toast.makeText(getApplicationContext(), "Este usuario no existe", Toast.LENGTH_SHORT).show();
                                 break;
                         }
@@ -118,8 +110,11 @@ public class MainActivity extends AppCompatActivity {
         crearusuario.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                Intent mIntent = new Intent(MainActivity.this, CrearUsuario.class);
-                startActivity(mIntent);
+                /*Intent mIntent = new Intent(MainActivity.this, CrearUsuario.class);
+                startActivity(mIntent);*/
+
+
+
 
 
             }
