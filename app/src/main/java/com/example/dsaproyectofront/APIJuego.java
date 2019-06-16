@@ -19,6 +19,13 @@ import retrofit2.http.Field;
 public interface  APIJuego {
 
 
+
+
+    @DELETE("usuarios/borrar/{idUser}")
+    Call<Void> borrar(
+            @Path("idUser") String id);
+
+
     @POST("usuarios/login")
     Call<UsuarioTO> login(
             @Body Auth a

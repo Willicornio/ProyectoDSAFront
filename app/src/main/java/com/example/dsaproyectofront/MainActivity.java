@@ -41,14 +41,13 @@ public class MainActivity extends AppCompatActivity {
         crearusuario = findViewById(R.id.crearusuario);
         textViewnom = findViewById(R.id.textViewnom);
         textViewInfo = findViewById(R.id.textViewInfo);
-        pruebamapa = findViewById(R.id.prueba);
+
 
 
 
         loguin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "hola", Toast.LENGTH_SHORT);
                 String name = nombre.getText().toString();
                 String contraseña = pass.getText().toString();
                 Auth a = new Auth(name, contraseña);
@@ -61,15 +60,14 @@ public class MainActivity extends AppCompatActivity {
                         switch (response.code()) {
                             case 201:
                                  UsuarioTO usuario = response.body();
-                                 String nombre = response.body().getNombre();
-                                 String id = response.body().getIdUser();
-                                 Toast.makeText(getApplicationContext(),"Bienvenido" + id, Toast.LENGTH_SHORT).show();
+                                 String nombreTO= response.body().getNombre();
+                                 Toast.makeText(getApplicationContext(),"Bienvenido  " + nombreTO, Toast.LENGTH_SHORT).show();
                                     if (name.equals(usuario.getNombre())) {
                                         Intent mIntent = new Intent(MainActivity.this, MenuActivity.class);
                                         mIntent.putExtra("id", usuario.getIdUser());
                                         startActivity(mIntent);
                                     } else {
-                                        Toast.makeText(getApplicationContext(), "Fallo al poner las cosas", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(), "Fallo al poner las credenciales", Toast.LENGTH_SHORT).show();
                                     }
                                     break;
 
@@ -110,8 +108,8 @@ public class MainActivity extends AppCompatActivity {
         crearusuario.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                /*Intent mIntent = new Intent(MainActivity.this, CrearUsuario.class);
-                startActivity(mIntent);*/
+                Intent mIntent = new Intent(MainActivity.this, CrearUsuario.class);
+                startActivity(mIntent);
 
 
 

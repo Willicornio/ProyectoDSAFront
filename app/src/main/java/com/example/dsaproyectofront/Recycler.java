@@ -28,11 +28,10 @@ import android.support.v7.widget.RecyclerView;
 public class Recycler extends RecyclerView.Adapter<Recycler.ViewHolder> {
 
 
-    private Context context;
+
 
     public Recycler(Context context) {
         this.lista = new ArrayList<>();
-        this.context = context;
     }
 
     private List<UsuarioTO> lista;
@@ -56,7 +55,7 @@ public class Recycler extends RecyclerView.Adapter<Recycler.ViewHolder> {
 
         UsuarioTO usuario = lista.get(i);
 
-        viewHolder.nombre.setText(usuario.getIdUser());
+        viewHolder.nombre.setText(usuario.getNombre());
         viewHolder.puntuacion.setText(String.valueOf(usuario.getPuntuacionTotal()));
 
 
@@ -72,14 +71,14 @@ public class Recycler extends RecyclerView.Adapter<Recycler.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        private ConstraintLayout constraintLayout; //esto no se usa, pero el Vera sabrá más que tu, payaso
+        private ConstraintLayout constraintLayout;
         private TextView nombre;
         private TextView puntuacion;
 
 
         public ViewHolder(View v){
             super(v);
-            constraintLayout = v.findViewById(R.id.constraintLayout); //Esto es el id del ConstraitLayout que hay que ponerlo donde "ConstariLayout" ID"
+            constraintLayout = v.findViewById(R.id.constraintLayout);
             nombre = v.findViewById(R.id.rankingnombre);
             puntuacion = v.findViewById(R.id.rankingpuntuacion);
 

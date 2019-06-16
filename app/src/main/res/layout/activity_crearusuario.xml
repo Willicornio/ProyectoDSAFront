@@ -34,6 +34,7 @@
         android:layout_marginBottom="20dp"
         android:width="250px"
         app:layout_constraintBottom_toTopOf="@+id/registrarse"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,14 +56,7 @@
         app:layout_constraintStart_toStartOf="@+id/pass"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textViewN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textSize="21sp"
-        tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="216dp" />
+
 
     <TextView
         android:id="@+id/textViewC"

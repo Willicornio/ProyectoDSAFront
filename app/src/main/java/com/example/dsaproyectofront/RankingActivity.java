@@ -28,11 +28,9 @@ public class RankingActivity extends AppCompatActivity {
     TextView nombre;
     TextView  puntuacion;
     public List<UsuarioTO> usuarios;
-    //Button atras;
 
     public Recycler recycler;
     public RecyclerView recyclerView;
-    ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,22 +43,12 @@ public class RankingActivity extends AppCompatActivity {
 
         nombre = findViewById(R.id.rankingnombre);
         puntuacion = findViewById(R.id.rankingpuntuacion);
-        //atras = findViewById(R.id.button3);
 
 
         api = APIJuego.retrofit.create(APIJuego.class);
 
         getData();
 
-
-        //   atras.setOnClickListener(new View.OnClickListener() {
-        //   @Override
-        //    public void onClick(View v) {
-
-        //       Intent mIntent = new Intent(RankingActivity.this,MenuActivity.class);
-        //       startActivity(mIntent);
-
-        //    }
     }
     private void getData(){
 
