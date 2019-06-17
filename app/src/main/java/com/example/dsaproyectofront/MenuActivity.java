@@ -87,7 +87,7 @@ public class MenuActivity extends AppCompatActivity {
         web.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("http://www.147.83.7.204:8080/login.html");
+                Uri uri = Uri.parse("http://10.0.2.2:8080/login.html");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
 

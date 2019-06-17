@@ -2,8 +2,8 @@ package com.example.dsaproyectofront;
 
 public class Mapa {
 
-    String id;
-    String mapa;
+    private String id;
+    private String mapa;
 
     public Mapa(){
 

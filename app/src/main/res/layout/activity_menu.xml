@@ -32,7 +32,7 @@
         android:layout_marginEnd="162dp"
         android:layout_marginBottom="15dp"
         android:background="@color/colorPrimary"
-        android:text="Historial"
+        android:text="Ranking"
         app:layout_constraintBottom_toTopOf="@+id/web"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

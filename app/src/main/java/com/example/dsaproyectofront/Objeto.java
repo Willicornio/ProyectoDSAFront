@@ -1,13 +1,13 @@
 package com.example.dsaproyectofront;
 public class Objeto {
 
-    String id;
-    String nombre;
-    String descripcion;
-    String foto;
-    int dinero;
-    int vida;
-    String activado;
+    private String id;
+    private String nombre;
+    private String descripcion;
+    private String foto;
+    private int dinero;
+    private int vida;
+    private String activado;
 
     public Objeto() {
 
